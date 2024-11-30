@@ -6,24 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page_title }} - Finance Hub</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="{% url 'finance:home' %}">Início</a></li>
-            {% if user.is_authenticated %}
-                <li><a href="{% url 'user_profile:profile' %}">Perfil</a></li>
-                <li><a href="{% url 'authentication:logout' %}">Sair</a></li>
-            {% else %}
-                <li><a href="{% url 'authentication:login' %}">Entrar</a></li>
-                <li><a href="{% url 'authentication:signup' %}">Cadastrar</a></li>
-            {% endif %}
+    <header>
+        <div class="layout">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="{% url 'finance:home' %}"><span class="symbol"><img class='logo-img' src="{% static 'imgs/logo.png' %}" alt="Logo" /></span><span class="text">Início</span></a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'user_profile:profile' %}"><span class="symbol fa fa-user-circle"></span><span class="text">Perfil</span></a></li>
+                        <li><a href="{% url 'authentication:logout' %}"><span class="symbol fa fa-sign-out-alt"></span><span class="text">Sair</span></a></li>
+                    {% else %}
+                        <li><a href="{% url 'authentication:login' %}"><span class="symbol fa fa-sign-in-alt"></span><span class="text">Entrar</span></a></li>
+                        <li><a href="{% url 'authentication:signup' %}"><span class="symbol fa fa-user-plus"></span><span class="text">Cadastrar</span></a></li>
+                    {% endif %}
+                </ul>
+            </nav>     
+            
+                
+            </div>
+        </div>
+    </header>
+    {% if messages %}
+    <div class='container-messages'>
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }} "{% endif %}>{{ message }}</li>
+            {% endfor %}
         </ul>
-    </nav>
+    </div>
+    {% endif %}
+    
 
     <div class="content">
         {% block content %}
         {% endblock content %}
     </div>
+
+    <script src='js/main.js'></script>
 </body>
 </html>

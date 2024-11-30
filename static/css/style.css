@@ -1,3 +1,115 @@
+:root{
+    font-size: 62.5%;
+}
 body{
-    background-color: chocolate;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-size:1.5rem
+}
+
+
+
+/* messages */
+
+.info,
+.success,
+.warning,
+.error {
+  margin: 2rem 0;
+  padding: 2rem;
+  border-radius: 0.3rem 0.3rem 0.3rem 0.3rem;
+  text-align: center;
+}
+.info {
+  color: #059;
+  background-color: #BEF;
+}
+.success {
+  color: #2c9a00;
+  background-color: #DFF2BF;
+}
+.warning {
+  color: #e8c100;
+  background-color: #FEEFB3;
+}
+.error {
+  color: #D8000C;
+  background-color: #FFBABA;
+}
+
+
+/* Navbar */
+.logo-img{
+    width: 3rem;
+}
+.layout {
+    display: flex; 
+}
+
+.navbar {
+    width: 6rem; 
+    height: 100vh; 
+    background-color: #171717; 
+    transition: width 0.3s; 
+    overflow: hidden; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+}
+
+.navbar:hover {
+    width: 20rem; 
+}
+
+.navbar ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.navbar li {
+    text-align: center; 
+    transition: background-color 0.3s; 
+}
+
+.navbar li:hover {
+    background-color: #000000; 
+}
+
+.navbar a {
+    display: flex; 
+    align-items: center; 
+    color: #5ac000; 
+    text-decoration: none; 
+    padding: 1.5rem; 
+    white-space: nowrap; 
+}
+
+.navbar a .text {
+    display: none; 
+    margin-left: 3rem; 
+}
+
+.navbar a:hover .text {
+    display: inline; 
+}
+
+.navbar a .symbol {
+    display: inline; 
+    color:#fff
+}
+
+.content {
+    margin-left: 6rem; 
+    padding: 2rem; 
+    flex-grow: 1; 
+    transition: margin-left 0.3s;
+}
+
+.navbar:hover + .content {
+    margin-left: 20rem; 
 }
