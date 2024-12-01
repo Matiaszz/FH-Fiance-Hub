@@ -9,30 +9,56 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 </head>
-<body>
+<body class='dark'>
     <header>
         <div class="layout">
             <nav class="navbar">
                 <ul>
-                    <li><a href="{% url 'finance:home' %}"><span class="symbol"><img class='logo-img' src="{% static 'imgs/logo.png' %}" alt="Logo" /></span><span class="text">Início</span></a></li>
+                    <li>
+                        <a href="{% url 'finance:home' %}">
+                            <span class="symbol">
+                                <img class='logo-img' src="{% static 'imgs/logo.png' %}" alt="Logo" />
+                            </span>
+                            <span class="text">Início</span>
+                        </a>
+                    </li>
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'user_profile:profile' %}"><span class="symbol fa fa-user-circle"></span><span class="text">Perfil</span></a></li>
-                        <li><a href="{% url 'authentication:logout' %}"><span class="symbol fa fa-sign-out-alt"></span><span class="text">Sair</span></a></li>
+                        <li>
+                            <a href="{% url 'user_profile:profile' %}">
+                                <span class="symbol fa fa-user-circle"></span>
+                                <span class="text">Perfil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'authentication:logout' %}">
+                                <span class="symbol fa fa-sign-out-alt"></span>
+                                <span class="text">Sair</span>
+                            </a>
+                        </li>
                     {% else %}
-                        <li><a href="{% url 'authentication:login' %}"><span class="symbol fa fa-sign-in-alt"></span><span class="text">Entrar</span></a></li>
-                        <li><a href="{% url 'authentication:signup' %}"><span class="symbol fa fa-user-plus"></span><span class="text">Cadastrar</span></a></li>
+                        <li>
+                            <a href="{% url 'authentication:login' %}">
+                                <span class="symbol fa fa-sign-in-alt"></span>
+                                <span class="text">Entrar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'authentication:signup' %}">
+                                <span class="symbol fa fa-user-plus"></span>
+                                <span class="text">Cadastrar</span>
+                            </a>
+                        </li>
                     {% endif %}
+                    <button onclick='switcher()' id="theme-switcher-link">
+                        <span class="symbol theme-switcher fa fa-sun" id="theme-icon"></span>
+                        <span class="text">Trocar Tema</span>
+                    </button>
                 </ul>
-            </nav>     
-            
-                
-            </div>
+            </nav>
         </div>
     </header>
-    
-    
 
-    <div class="content dark full-size">
+    <div class="content full-size">
         {% if messages %}
             <div class='container-messages'>
                 <ul class="messages">
@@ -46,6 +72,6 @@
         {% endblock content %}
     </div>
 
-    <script src='js/main.js'></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
