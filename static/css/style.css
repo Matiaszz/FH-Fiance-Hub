@@ -1,16 +1,36 @@
-:root{
-    font-size: 62.5%;
-}
-body{
-    background-color: #1e1e1e;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
+
+/* resets */
+*{
     padding:0;
     margin:0;
     box-sizing: border-box;
-    font-size:1.5rem
 }
 
+body{
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+ul{
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+/* variables */
+:root{
+    font-size: 62.5%;
+    --dark:  #1e1e1e
+}
+
+
+.dark{
+    background-color: var(--dark);
+}
+
+.full-size{
+    width: 96.85vw;
+    height:100vh;
+}
 
 
 /* messages */
@@ -59,17 +79,13 @@ body{
     position: fixed; 
     top: 0;
     left: 0;
+    font-size: 2rem;
 }
 
 .navbar:hover {
     width: 20rem; 
 }
 
-.navbar ul {
-    list-style-type: none; 
-    padding: 0; 
-    margin: 0; 
-}
 
 .navbar li {
     text-align: center; 
@@ -83,7 +99,7 @@ body{
 .navbar a {
     display: flex; 
     align-items: center; 
-    color: #5ac000; 
+    color: #4CAF50; 
     text-decoration: none; 
     padding: 1.5rem; 
     white-space: nowrap; 
@@ -103,13 +119,18 @@ body{
     color:#fff
 }
 
+
+
+.navbar:hover + .content {
+    margin-left: 20rem; 
+}
+
+/* content */
+
 .content {
     margin-left: 6rem; 
     padding: 2rem; 
     flex-grow: 1; 
     transition: margin-left 0.3s;
-}
-
-.navbar:hover + .content {
-    margin-left: 20rem; 
+    font-size:1.5rem
 }
