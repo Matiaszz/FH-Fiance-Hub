@@ -23,6 +23,8 @@ class ChartView(View):
             'Values': [10, 20, 15, 30]
         }
 
+        total = sum(data['Values'])
+
         df = pd.DataFrame(data)
 
         plt.figure(figsize=(8, 5))
@@ -36,4 +38,7 @@ class ChartView(View):
         plt.savefig(chart_path)
         plt.close()
 
-        return render(request, 'finance/dashboard.html')
+        context = {
+            'total': total
+        }
+        return render(request, 'finance/dashboard.html', context)

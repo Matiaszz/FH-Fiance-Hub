@@ -4,8 +4,13 @@
 
 {% block content %}
     <div>
-        <h1>Dashboard</h1>
+        <div>
+            <h1>Dashboard</h1>
+            <p>Saldo total: {{total}}</p>
+        </div>
+        <div>
+            <img src="{% static 'analytics/chart.png' %}" alt="Gráfico">
+        </div>
         
-        <img src="{% static 'analytics/chart.png' %}" alt="Gráfico">
     </div>
 {% endblock content %}
