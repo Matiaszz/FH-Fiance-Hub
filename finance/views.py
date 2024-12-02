@@ -1,9 +1,11 @@
-import os
-from django.views import View
-import matplotlib.pyplot as plt
-import pandas as pd
-from django.shortcuts import render
 from django.views.generic import DetailView
+from django.shortcuts import render
+import pandas as pd
+import matplotlib.pyplot as plt
+from django.views import View
+import os
+import matplotlib
+matplotlib.use('Agg')
 
 
 class HomeView(DetailView):
@@ -29,7 +31,7 @@ class ChartView(View):
         plt.xlabel('Category')
         plt.ylabel('Values')
 
-        chart_path = 'analytics/static/analytics/chart.png'
+        chart_path = 'static/analytics/chart.png'
         os.makedirs(os.path.dirname(chart_path), exist_ok=True)
         plt.savefig(chart_path)
         plt.close()
