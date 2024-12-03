@@ -2,4 +2,5 @@
 .env
 venv
 finance_db.sqlite3
+*.sqlite3
 __pycache__
