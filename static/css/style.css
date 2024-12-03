@@ -131,7 +131,7 @@ ul{
     margin-left: 20rem; 
 }
 
-button {
+#theme-switcher-link {
     background-color: transparent; 
     border: none; 
     color: #4CAF50; 
@@ -144,17 +144,17 @@ button {
     align-items: center; 
 }
 
-button:hover {
+#theme-switcher-link:hover {
     background-color: #000000; 
 }
 
-button .text {
+#theme-switcher-link .text {
     display: inline; 
     margin-left: 3rem; 
     font-size: 2rem;
 }
 
-button .symbol {
+#theme-switcher-link .symbol {
     display: inline; 
     color: #fff;
     font-size: 2.5rem;
