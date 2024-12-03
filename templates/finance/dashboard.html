@@ -6,11 +6,14 @@
     <div>
         <div>
             <h1>Dashboard</h1>
-            <p>Saldo total: {{total}}</p>
+            <p>Saldo total: R${{total}}</p>
         </div>
+
         <div>
-            <img src="{% static 'analytics/chart.png' %}" alt="Gráfico">
+            <img src="{% static 'analytics/input_chart.png' %}" alt="Gráfico">
         </div>
+
+        {% include "finance/_upload_csv" %}
         
     </div>
 {% endblock content %}

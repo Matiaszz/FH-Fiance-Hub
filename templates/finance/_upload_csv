@@ -1,0 +1,9 @@
+<div>
+    <div>
+        <form name="file" action="{% url 'finance:receive_csv' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ upload_csv }}
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
